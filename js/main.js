@@ -37,7 +37,7 @@ var score = 0;
 var highscore = 0;
 
 /*LLL var pipeheight = 90;*/
-var pipeheight = 140;
+var pipeheight = 190;
 var pipewidth = 52;
 var pipes = new Array();
 

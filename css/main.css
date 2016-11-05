@@ -318,7 +318,7 @@ Screen - Game
    width: 91px;
    height: 107px;
    background-size: contain;
-   background-image: url('../assets/bird.png');
+   background-image: url('../assets/maia_flappy.png');
    background-repeat:no-repeat;
 
   /* comentat e codul care face imaginea animata - e.g. datul din aripi */

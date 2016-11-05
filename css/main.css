@@ -326,6 +326,7 @@ Screen - Game
    animation: animBird 300ms steps(4) infinite;*/
 }
 
+/*LLL and below pipe related*/
 .pipe
 {
    position: absolute;
@@ -348,6 +349,18 @@ Screen - Game
    background-position: center;
 }
 
+.pipe_upper_over
+{
+   z-index: 10;
+   position: absolute;
+   top: 0;
+   width: 52px;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-image: url('../assets/personaje/plaha.png');
+}
+
 .pipe_upper:after
 {
    content: "";
@@ -367,6 +380,19 @@ Screen - Game
    background-repeat: repeat-y;
    background-position: center;
 }
+
+.pipe_lower_over
+{
+   z-index: 10;
+   position: absolute;
+   bottom: 0;
+   width: 52px;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-image: url('../assets/personaje/plaha.png');
+}
+
 
 .pipe_lower:after
 {

@@ -55,13 +55,30 @@ var soundDie = new buzz.sound("assets/sounds/sfx_die.ogg");
 var soundSwoosh = new buzz.sound("assets/sounds/sfx_swooshing.ogg");
 var sountrack = new buzz.sound("assets/sounds/sountrack.ogg");
 
-
 buzz.all().setVolume(volume);
+
+$(".mute").on("click", function(ev) {
+     if (volume == 0 ) {
+      volume = 20;
+      $(".mute i").removeClass('fa-volume-off');
+      $(".mute i").addClass('fa-volume-up');
+   } else {
+      volume = 0;
+      $(".mute i").addClass('fa-volume-off');
+      $(".mute i").removeClass('fa-volume-up');
+   }
+
+   buzz.all().setVolume(volume);
+
+});
+
 soundJump.setVolume(10);
 
 //loops
 var loopGameloop;
 var loopPipeloop;
+
+
 
 $(document).ready(function() {
    if(window.location.search == "?debug")
@@ -274,8 +291,9 @@ $(document).keydown(function(e){
 });
 
 //Handle mouse down OR touch start
-if("ontouchstart" in window)
+if("ontouchstart" in window){
    $(document).on("touchstart", screenClick);
+}
 else
    $(document).on("mousedown", screenClick);
 
@@ -289,6 +307,8 @@ function screenClick()
    {
       startGame();
    }
+
+
 }
 
 function playerJump()
@@ -398,6 +418,8 @@ function showScore()
 {
    //unhide us
    $("#scoreboard").css("display", "block");
+
+   ga('send', 'event', 'level', score );
    
    //remove the big score
    setBigScore(true);

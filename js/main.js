@@ -70,8 +70,6 @@ $(document).ready(function() {
    if(savedscore != "")
       highscore = parseInt(savedscore);
    //start with the splash screen
-   $('#gamescreen').fullpage();
-
    showSplash();
 });
 
@@ -97,6 +95,8 @@ function setCookie(cname,cvalue,exdays)
 
 function showSplash()
 {
+   $('#gamecontainer').fullpage();
+
    currentstate = states.SplashScreen;
    
    //set the defaults (again)

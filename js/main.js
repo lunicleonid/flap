@@ -47,12 +47,15 @@ var pipes = new Array();
 var replayclickable = false;
 
 //sounds
-var volume = 30;
+var volume = 20;
 var soundJump = new buzz.sound("assets/sounds/sfx_wing.ogg");
 var soundScore = new buzz.sound("assets/sounds/sfx_point.ogg");
 var soundHit = new buzz.sound("assets/sounds/sfx_hit.ogg");
 var soundDie = new buzz.sound("assets/sounds/sfx_die.ogg");
 var soundSwoosh = new buzz.sound("assets/sounds/sfx_swooshing.ogg");
+var sountrack = new buzz.sound("assets/sounds/sountrack.ogg");
+
+
 buzz.all().setVolume(volume);
 
 //loops
@@ -111,7 +114,7 @@ function showSplash()
    
    soundSwoosh.stop();
    soundSwoosh.play();
-   
+
    //clear out all the pipes if there are any
    $(".pipe").remove();
    pipes = new Array();
@@ -126,6 +129,8 @@ function showSplash()
 
 function startGame()
 {
+   sountrack.stop();
+   sountrack.play();
    currentstate = states.GameScreen;
    
    //fade out the splash

@@ -99,8 +99,6 @@ function setCookie(cname,cvalue,exdays)
 
 function showSplash()
 {
-   $('#gamecontainer').fullpage();
-
    currentstate = states.SplashScreen;
    
    //set the defaults (again)
@@ -516,5 +514,37 @@ var isIncompatible = {
    },
    any: function() {
    return (isIncompatible.Android() || isIncompatible.BlackBerry() || isIncompatible.iOS() || isIncompatible.Opera() || isIncompatible.Safari() || isIncompatible.Windows());
+   }
+};
+
+
+$("#shareBtn").on("click", function() {
+   FB.ui({
+      method: 'share',
+      display: 'popup',
+      href: 'http://sens.media'
+   }, function(response){
+      ga('send', 'event', 'Share', 'Facebook' );
+   });
+});
+
+$(".ok-btn").on("click", function() {
+   ga('send', 'event', 'Share', 'Odnoklasniki' );
+});
+
+$(".view-myths").on("click", function() {
+   ga('send', 'event', 'Site', 'Redirect' );
+});
+
+
+Share = {
+   odnoklassniki: function(purl, text) {
+      url  = 'http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1';
+      url += '&st.comments=' + encodeURIComponent(text);
+      url += '&st._surl='    + encodeURIComponent(purl);
+      Share.popup(url);
+   },
+   popup: function(url) {
+      window.open(url,'','toolbar=0,status=0,width=626,height=436');
    }
 };

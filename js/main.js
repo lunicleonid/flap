@@ -17,6 +17,7 @@
 
 var debugmode = false;
 
+
 var states = Object.freeze({
    SplashScreen: 0,
    GameScreen: 1,

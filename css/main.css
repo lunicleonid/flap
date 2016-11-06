@@ -218,6 +218,16 @@ Screen - Game
    text-align: center;
 }
 
+#bigscoreText
+{
+   position: absolute;
+   top: 25px;
+   left: 195px;
+   z-index: 100;
+   font-size: 30px;
+   font-weight: 600;
+}
+
 #bigscore img
 {
    display: inline-block;

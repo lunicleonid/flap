@@ -57,6 +57,7 @@ var sountrack = new buzz.sound("assets/sounds/sountrack.ogg");
 
 
 buzz.all().setVolume(volume);
+soundJump.setVolume(10);
 
 //loops
 var loopGameloop;

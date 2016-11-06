@@ -401,14 +401,15 @@ function playerDead()
    if(isIncompatible.any())
    {
       //skip right to showing score
-      showScore();
+
+      setTimeout(function(){ showScore(); }, 1000);
    }
    else
    {
       //play the hit sound (then the dead sound) and then show score
       soundHit.play().bindOnce("ended", function() {
          soundDie.play().bindOnce("ended", function() {
-            showScore();
+            setTimeout(function(){ showScore(); }, 1000);
          });
       });
    }

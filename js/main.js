@@ -522,7 +522,7 @@ $("#shareBtn").on("click", function() {
    FB.ui({
       method: 'share',
       display: 'popup',
-      href: 'http://sens.media'
+      href: 'http://albinuta.md/'
    }, function(response){
       ga('send', 'event', 'Share', 'Facebook' );
    });

@@ -37,7 +37,7 @@ var score = 0;
 var highscore = 0;
 
 /*LLL var pipeheight = 90;*/
-var pipeheight = 170;
+var pipeheight = 145;
 var pipewidth = 52;
 var pipes = new Array();
 
@@ -150,7 +150,7 @@ function startGame()
 function updatePlayer(player)
 {
    //rotation
-   rotation = Math.min((velocity / 10) * 90, 90);
+   rotation = Math.min((velocity / 10) * 90, 90)/2;
    
    //apply rotation and position
    $(player).css({ rotate: rotation, top: position });
@@ -168,10 +168,10 @@ function gameloop() {
    
    //create the bounding box
    var box = document.getElementById('player').getBoundingClientRect();
-   var origwidth = 60.0;
-   var origheight = 70.0;
+   var origwidth = 80.0;
+   var origheight = 0.0;
    var boxwidth = origwidth - (Math.sin(Math.abs(rotation) / 90) * 8);
-   var boxheight = (origheight + box.height) / 2;
+   var boxheight = (origheight + box.height) / 2;//ZZZ LLL
    var boxleft = ((box.width - boxwidth) / 2) + box.left;
    var boxtop = ((box.height - boxheight) / 2) + box.top;
    var boxright = boxleft + boxwidth;

@@ -315,10 +315,10 @@ Screen - Game
    position: absolute;
 /*   width: 34px;
    height: 24px;*/
-   width: 73px;
-   height: 87px;
+   width: 126px;
+   height: 67px;
    background-size: contain;
-   background-image: url('../assets/maia_flappy.png');
+   background-image: url('../assets/albina-maia.gif');
    background-repeat:no-repeat;
 
   /* comentat e codul care face imaginea animata - e.g. datul din aripi */

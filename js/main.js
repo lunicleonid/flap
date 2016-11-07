@@ -157,6 +157,7 @@ function startGame()
    
    //update the big score
    setBigScore();
+   $("#bigscoreText").show();
    
    //debug mode?
    if(debugmode)
@@ -326,12 +327,19 @@ function setBigScore(erase)
    var elemscore = $("#bigscore");
    elemscore.empty();
    
-   if(erase)
+   if(erase) {
+      $("#bigscoreText").hide();
       return;
+   }
+
    
    var digits = score.toString().split('');
-   for(var i = 0; i < digits.length; i++)
+   for(var i = 0; i < digits.length; i++){
+      if (i == 1) {
+         $("#bigscoreText").show();
+      }
       elemscore.append("<img src='assets/font_big_" + digits[i] + ".png' alt='" + digits[i] + "'>");
+   }
 }
 
 function setSmallScore()

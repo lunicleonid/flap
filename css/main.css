@@ -68,19 +68,23 @@
 
 @-webkit-keyframes animParliament {
    0% { right: -580px }
-   100% { right: 100px }
+   50% { right: 3%;  }
+   100% { right: -580px }
 }
 @-moz-keyframes animParliament {
    0% { right: -580px }
-   100% { right: 100px }
+   50% { right: 3%;  }
+   100% { right: -580px }
 }
 @-o-keyframes animParliament {
    0% { right: -580px }
-   100% { right: 100px }
+   50% { right: 3%;  }
+   100% { right: -580px }
 }
 @keyframes animParliament {
    0% { right: -580px }
-   100% { right: 100px }
+   50% { right: 3%;  }
+   100% { right: -580px }
 }
 
 @-webkit-keyframes animPipe {

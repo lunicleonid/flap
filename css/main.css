@@ -34,19 +34,19 @@
 
 @-webkit-keyframes animSky {
    0% { background-position: 0px 100%; }
-   100% { background-position: -275px 100%; }
+   100% { background-position: -340px 100%; }
 }
 @-moz-keyframes animSky {
    0% { background-position: 0px 100%; }
-   100% { background-position: -275px 100%; }
+   100% { background-position: -340px 100%; }
 }
 @-o-keyframes animSky {
    0% { background-position: 0px 100%; }
-   100% { background-position: -275px 100%; }
+   100% { background-position: -340px 100%; }
 }
 @keyframes animSky {
    0% { background-position: 0px 100%; }
-   100% { background-position: -275px 100%; }
+   100% { background-position: -340px 100%; }
 }
 
 @-webkit-keyframes animBird {
@@ -66,21 +66,42 @@
    to { background-position: 0px -36px; }
 }
 
+@-webkit-keyframes animParliament {
+   0% { right: -580px }
+   100% { right: 100px }
+}
+@-moz-keyframes animParliament {
+   0% { right: -580px }
+   100% { right: 100px }
+}
+@-o-keyframes animParliament {
+   0% { right: -580px }
+   100% { right: 100px }
+}
+@keyframes animParliament {
+   0% { right: -580px }
+   100% { right: 100px }
+}
+
 @-webkit-keyframes animPipe {
    0% { left: 900px; }
-   100% { left: -100px; }
+   80% { left: -100px; }
+   100% { left: -300px; }
 }
 @-moz-keyframes animPipe {
    0% { left: 900px; }
-   100% { left: -100px; }
+   80% { left: -100px; }
+   100% { left: -300px; }
 }
 @-o-keyframes animPipe {
    0% { left: 900px; }
-   100% { left: -100px; }
+   80% { left: -100px; }
+   100% { left: -300px; }
 }
 @keyframes animPipe {
    0% { left: 900px; }
-   100% { left: -100px; }
+   80% { left: -100px; }
+   100% { left: -300px; }
 }
 
 @-webkit-keyframes animCeiling {
@@ -163,13 +184,13 @@ Screen - Game
    top: 0;
    width: 100%;
    height: 80%;
-   background-image: url('../assets/sky.png');
-   background-repeat: repeat-x;
-   background-position: 0px 100%;
+   background-image: url('../assets/flowers.png'), url('../assets/sky2.png');
+   background-repeat: repeat-x, repeat;
+   background-position: 0px 100%, 0px;
    background-color: #4ec0ca;
-   
-   -webkit-animation: animSky 7s linear infinite;
-   animation: animSky 7s linear infinite;
+
+   -webkit-animation: animSky 3s linear infinite;
+   animation: animSky 3s linear infinite;
 }
 
 /*LLL*/
@@ -204,9 +225,10 @@ Screen - Game
    background-repeat: repeat-x;
    background-position: 0px 0px;
    background-color: #ded895;
+   z-index: 15;
    
-   -webkit-animation: animLand 2516ms linear infinite;
-   animation: animLand 2516ms linear infinite;
+   /*-webkit-animation: animLand 2516ms linear infinite;
+   animation: animLand 2516ms linear infinite;*/
 }
 
 #bigscore
@@ -359,6 +381,7 @@ Screen - Game
    
    -webkit-animation: animPipe 7500ms linear;
    animation: animPipe 7500ms linear;
+
 }
 
 .pipe_upper
@@ -366,9 +389,11 @@ Screen - Game
    position: absolute;
    top: 0;
    width: 52px;
-   background-image: url('../assets/pipe.png');
+   background-image: url('../assets/coins.png');
    background-repeat: repeat-y;
    background-position: center;
+   background-size: 200%;
+   margin-bottom: 10px; 
 }
 
 .pipe_upper_over
@@ -380,17 +405,21 @@ Screen - Game
    background-position: center;
    background-repeat: no-repeat;
    background-size: contain;
-   background-image: url('../assets/personaje/plaha.png');
 }
 
 .pipe_upper:after
 {
    content: "";
    position: absolute;
-   bottom: 0;
-   width: 52px;
-   height: 26px;
-   background-image: url('../assets/pipe-down.png');
+   width: 80px;
+   height: 122px;
+   background-image: url('../assets/dodon.png');
+   background-size: 100%;
+   left: -13px;
+   bottom: -25px;
+   -wbkit-transform: rotate(180deg);
+   transform: rotate(180deg);
+   z-index: 10;
 }
 
 .pipe_lower
@@ -398,7 +427,8 @@ Screen - Game
    position: absolute;
    bottom: 0;
    width: 52px;
-   background-image: url('../assets/pipe.png');
+   background-image: url('../assets/coins.png');
+   background-size: 300%;
    background-repeat: repeat-y;
    background-position: center;
 }
@@ -412,18 +442,46 @@ Screen - Game
    background-position: center;
    background-repeat: no-repeat;
    background-size: contain;
-   background-image: url('../assets/personaje/plaha.png');
+   /*background-image: url('../assets/personaje/plaha.png');*/
 }
-
 
 .pipe_lower:after
 {
    content: "";
    position: absolute;
-   top: 0;
-   width: 52px;
-   height: 26px;
-   background-image: url('../assets/pipe-up.png');
+   width: 80px;
+   height: 122px;
+   background-size: 100%;
+   left: -13px;
+   top: -15px;
+   z-index: 10;
+   background-image: url('../assets/dodon.png');
+}
+
+.pipe.plaha .pipe_lower:after {
+   content: "";
+   position: absolute;
+   width: 80px;
+   height: 122px;
+   background-size: 100%;
+   left: -13px;
+   top: -15px;
+   z-index: 10;
+   background-image: url('../assets/plaha.png');
+}
+
+.pipe.plaha .pipe_upper:after {
+   content: "";
+   position: absolute;
+   width: 80px;
+   height: 122px;
+   background-image: url('../assets/plaha.png');
+   background-size: 100%;
+   left: -13px;
+   bottom: -25px;
+   -wbkit-transform: rotate(180deg);
+   transform: rotate(180deg);
+   z-index: 10;
 }
 
 #footer
@@ -503,5 +561,22 @@ Screen - Game
 
 .mute i {
    font-size: 30px;
+}
+
+#presedentie {
+   background-image: url(../assets/presedentie.png);
+    width: 400px;
+    height: 500px;
+    right: -580px;
+    position: absolute;
+    bottom: -38px;
+    background-position-y: 100px;
+    background-repeat: no-repeat;
+    z-index: 100;
+}
+
+#presedentie.animated {
+   -webkit-animation: animParliament 5s;
+   animation: animParliament 5s;
 }
 

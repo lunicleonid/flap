@@ -19,6 +19,7 @@
 
 var debugmode = false;
 
+var pipesCount = 0;
 
 var states = Object.freeze({
    SplashScreen: 0,
@@ -145,6 +146,7 @@ function showSplash()
 
 function startGame()
 {
+   $('#presedentie').removeClass('animated');
    sountrack.stop();
    sountrack.play();
    currentstate = states.GameScreen;
@@ -241,8 +243,8 @@ function gameloop() {
    {
       var boundingbox = $("#pipebox");
       boundingbox.css('left', pipeleft);
-      boundingbox.css('top', pipetop);
-      boundingbox.css('height', pipeheight);
+      boundingbox.css('top', pipetop + 10);
+      boundingbox.css('height', pipeheight - 10);
       boundingbox.css('width', pipewidth);
    }
    
@@ -250,7 +252,7 @@ function gameloop() {
    if(boxright > pipeleft)
    {
       //we're within the pipe, have we passed between upper and lower pipes?
-      if(boxtop > pipetop && boxbottom < pipebottom)
+      if(boxtop > pipetop + 10 && boxbottom < pipebottom)
       {
          //yeah! we're within bounds
          
@@ -491,6 +493,10 @@ function playerScore()
    soundScore.stop();
    soundScore.play();
    setBigScore();
+
+   if ( score >= 1 ) {
+      $('#presedentie').addClass('animated');
+   }
 }
 
 function updatePipes()
@@ -498,13 +504,20 @@ function updatePipes()
    //Do any pipes need removal?
    $(".pipe").filter(function() { return $(this).position().left <= -100; }).remove()
    
+   pipesCount++;
+
+   var classes = '';
+   if ( pipesCount % 2 ) {
+      classes = 'plaha';
+   }
+
    //add a new pipe (top height + bottom height  + pipeheight == flyArea) and put it in our tracker
    //LLL
    var padding = 40;
    var constraint = flyArea - pipeheight - (padding * 2); //double padding (for top and bottom)
    var topheight = Math.floor((Math.random()*constraint) + padding); //add lower padding
    var bottomheight = (flyArea - pipeheight) - topheight;
-   var htmlInNewPipe = '<div class="pipe animated">' +
+   var htmlInNewPipe = '<div class="pipe animated ' + classes + '">' +
        '<div class="pipe_upper" style="height: ' + topheight + 'px;"></div>' +
        '<div class="pipe_upper_over" style="height: ' + topheight + 'px;"></div>' +
        '<div class="pipe_lower" style="height: ' + bottomheight + 'px;"></div>' +

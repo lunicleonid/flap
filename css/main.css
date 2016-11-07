@@ -282,6 +282,8 @@ Screen - Game
       margin-top: -45%;
       width: 90%;
       height: 90%;
+      background-image: url('../assets/splash-mobile.png');
+
    }
 }
 
@@ -599,3 +601,13 @@ Screen - Game
    animation: animParliament 9s linear infinite;
 }
 
+#gray-bg {
+   display: none;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 999;
+   background-image: url(../assets/gray-bg.png);
+}

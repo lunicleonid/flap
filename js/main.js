@@ -158,7 +158,7 @@ function startGame()
    //update the big score
    setBigScore();
    $("#bigscoreText").show();
-   
+
    //debug mode?
    if(debugmode)
    {
@@ -329,6 +329,7 @@ function setBigScore(erase)
    
    if(erase) {
       $("#bigscoreText").hide();
+      $("#gray-bg").show(300, 'swing');
       return;
    }
 
@@ -462,12 +463,12 @@ function showScore()
       soundSwoosh.play();
       $("#replay").transition({ y: '0px', opacity: 1}, 600, 'ease');
       
-      //also animate in the MEDAL! WOO!
-      if(wonmedal)
-      {
-         $("#medal").css({ scale: 2, opacity: 0 });
-         $("#medal").transition({ opacity: 1, scale: 1 }, 1200, 'ease');
-      }
+      // //also animate in the MEDAL! WOO!
+      // if(wonmedal)
+      // {
+      //    $("#medal").css({ scale: 2, opacity: 0 });
+      //    $("#medal").transition({ opacity: 1, scale: 1 }, 1200, 'ease');
+      // }
    });
    
    //make the replay button clickable
@@ -488,7 +489,7 @@ $("#replay").click(function() {
    $("#scoreboard").transition({ y: '-40px', opacity: 0}, 1000, 'ease', function() {
       //when that's done, display us back to nothing
       $("#scoreboard").css("display", "none");
-      
+      $("#gray-bg").hide(300);
       //start the game over!
       showSplash();
    });

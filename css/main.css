@@ -67,24 +67,20 @@
 }
 
 @-webkit-keyframes animParliament {
-   0% { right: -580px }
-   50% { right: 3%;  }
-   100% { right: -580px }
+   0% { right: -600px; }
+   100% { right: 600px; }
 }
 @-moz-keyframes animParliament {
-   0% { right: -580px }
-   50% { right: 3%;  }
-   100% { right: -580px }
+   0% { right: -600px; }
+   100% { right: 600px; }
 }
 @-o-keyframes animParliament {
-   0% { right: -580px }
-   50% { right: 3%;  }
-   100% { right: -580px }
+   0% { right: -600px; }
+   100% { right: 600px; }
 }
 @keyframes animParliament {
-   0% { right: -580px }
-   50% { right: 3%;  }
-   100% { right: -580px }
+   0% { right: -600px; }
+   100% { right: 600px; }
 }
 
 @-webkit-keyframes animPipe {
@@ -355,6 +351,7 @@ Screen - Game
 {
    left: 60px;
    top: 200px;
+   z-index: 3;
 }
 
 /*LLL*/
@@ -576,11 +573,11 @@ Screen - Game
     bottom: -38px;
     background-position-y: 100px;
     background-repeat: no-repeat;
-    z-index: 100;
+    z-index: 2;
 }
 
 #presedentie.animated {
-   -webkit-animation: animParliament 5s;
-   animation: animParliament 5s;
+   -webkit-animation: animParliament 9s linear infinite;
+   animation: animParliament 9s linear infinite;
 }
 

@@ -276,14 +276,39 @@ Screen - Game
    background-size: contain;
 }
 
+#splash-mobile {
+   display: none;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-left: -200px;
+   margin-top: -200px;
+   width: 400px;
+   height: 400px;
+   text-align: center;
+}
+
+#splash-mobile img {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+}
+
+#splash-mobile img:nth-child(2) {
+   z-index: 14;
+}
+
 @media only screen and (max-width: 800px) {
    #splash {
+      display: none;
+   }  
+   #splash-mobile {
+      display: block;
       margin-left: -45%;
       margin-top: -45%;
       width: 90%;
       height: 90%;
-      background-image: url('../assets/splash-mobile.png');
-
    }
 }
 
@@ -596,7 +621,7 @@ Screen - Game
     z-index: 2;
 }
 
-#presedentie.animated {
+#presedentie {
    -webkit-animation: animParliament 9s linear infinite;
    animation: animParliament 9s linear infinite;
 }

@@ -82,6 +82,7 @@ var loopPipeloop;
 
 
 $(document).ready(function() {
+
    if(window.location.search == "?debug")
       debugmode = true;
    if(window.location.search == "?easy")

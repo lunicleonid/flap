@@ -151,6 +151,13 @@ body
    color: #fff;
 }
 
+#gamecontainer * {
+   -webkit-user-select: none;  /* Chrome all / Safari all */
+   -moz-user-select: none;     /* Firefox all */
+   -ms-user-select: none;      /* IE 10+ */
+   user-select: none;          /* Likely future */
+}
+
 #gamecontainer
 {
    position: relative;
@@ -160,6 +167,7 @@ body
    max-width: 800px;
    margin: 0 auto;
    overflow: hidden;
+
 }
 
 @media only screen and (max-width: 800px) {

@@ -340,7 +340,9 @@ function setBigScore(erase)
       if (i == 1) {
          $("#bigscoreText").show();
       }
-      elemscore.append("<img src='assets/font_big_" + digits[i] + ".png' alt='" + digits[i] + "'>");
+      $("#bigscoreText").html("Minciuni depășite <span>" + score + "</span>");
+      // elemscore.append("<img src='assets/font_big_" + digits[i] + ".png' alt='" + digits[i] + "'>");
+      // elemscore.append("<img src='assets/font_big_" + digits[i] + ".png' alt='" + digits[i] + "'>");
    }
 }
 
@@ -350,8 +352,10 @@ function setSmallScore()
    elemscore.empty();
    
    var digits = score.toString().split('');
-   for(var i = 0; i < digits.length; i++)
+   for(var i = 0; i < digits.length; i++) {
       elemscore.append("<img src='assets/font_small_" + digits[i] + ".png' alt='" + digits[i] + "'>");
+   }
+
 }
 
 function setHighScore()

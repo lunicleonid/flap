@@ -263,6 +263,10 @@ Screen - Game
    -webkit-text-stroke-color: black;
 }
 
+#bigscoreText span {
+   font-size: 30px;
+}
+
 #bigscore img
 {
    display: inline-block;

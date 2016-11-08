@@ -142,7 +142,7 @@ function showSplash()
    $(".animated").css('-webkit-animation-play-state', 'running');
    
    //fade in the splash
-   $("#splash").transition({ opacity: 1 }, 2000, 'ease');
+   $("#splash, #splash-mobile").transition({ opacity: 1 }, 2000, 'ease');
 }
 
 function startGame()
@@ -153,8 +153,8 @@ function startGame()
    currentstate = states.GameScreen;
    
    //fade out the splash
-   $("#splash").stop();
-   $("#splash").transition({ opacity: 0 }, 500, 'ease');
+   $("#splash, #splash-mobile").stop();
+   $("#splash, #splash-mobile").transition({ opacity: 0 }, 500, 'ease');
    
    //update the big score
    setBigScore();

@@ -289,7 +289,6 @@ Screen - Game
 }
 
 #splash-mobile {
-   display: none;
    position: absolute;
    top: 50%;
    left: 50%;
@@ -307,6 +306,10 @@ Screen - Game
    width: 100%;
 }
 
+#splash-mobile img:nth-child(1) {
+   display: none;
+}
+
 #splash-mobile img:nth-child(2) {
    z-index: 14;
 }
@@ -321,6 +324,9 @@ Screen - Game
       margin-top: -45%;
       width: 90%;
       height: 90%;
+   }
+   #splash-mobile img:nth-child(1) {
+      display: block;
    }
 }
 
@@ -631,9 +637,10 @@ Screen - Game
     background-position-y: 100px;
     background-repeat: no-repeat;
     z-index: 2;
+
 }
 
-#presedentie {
+#presedentie.animated {
    -webkit-animation: animParliament 9s linear infinite;
    animation: animParliament 9s linear infinite;
 }
